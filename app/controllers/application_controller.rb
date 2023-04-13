@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
 
   def calculate_payment
 
-    @apr_percentage = params.fetch("user_apr")
+    @apr_percentage = params.fetch("user_apr").to_f
     @years = params.fetch("user_years").to_f
     @periods = @years*12
     @pp_apr = ((@apr_percentage.to_f)/100)/12
